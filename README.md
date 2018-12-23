@@ -1,4 +1,4 @@
-# raspberrypi-lnmp
+# rpi-lnmp
 #### Build
 ~~~
 docker-compose up
