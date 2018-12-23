@@ -25,3 +25,7 @@ services:
     restart: always
     networks:
       - default
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - ${PHPMYADMIN_HOST_PORT}:80
