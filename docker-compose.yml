@@ -1,0 +1,27 @@
+version: '2.2'
+services:
+  nginx:
+    image: nginx:${NGINX_VERSION}
+    ports:
+      - ${HTTP_HOST}:80
+      - ${HTTPS_HOST}:443
+    volumes:
+      - ${SOURCE_DIR}:/var/www/html/:rw
+      - ${NGINX_CONFD_DIR}:/etc/nginx/conf.d/:rw
+      - ${NGINX_CONF_FILE}:/etc/nginx/nginx.conf:ro
+      - ${NGINX_LOG_DIR}:/var/log/nginx/:rw
+    restart: always
+  php:
+    build: 
+      context: .
+      args:
+        PHP_VERSION: ${PHP_VERSION}
+    volumes:
+      - ${SOURCE_DIR}:/var/www/html/:rw
+      - ${PHP73_PHP_CONFIG_FILE}:/usr/local/etc/php/php.ini:ro
+      - ${PHP73_FPM_CONFIG_FILE}:/usr/local/etc/php-fpm.d/www.conf:rw
+    cap_add:
+      - SYS_PTRACE
+    restart: always
+    networks:
+      - default
