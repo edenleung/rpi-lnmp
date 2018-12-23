@@ -1,2 +1,10 @@
 # raspberrypi-lnmp
-#### raspberrypi lnmp镜像
+#### Build
+~~~
+docker-compose up
+~~~
+
+#### Done
+~~~
+localhost:9501
+~~~
