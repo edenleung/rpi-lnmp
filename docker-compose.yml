@@ -11,7 +11,7 @@ services:
       - ${NGINX_CONF_FILE}:/etc/nginx/nginx.conf:ro
       - ${NGINX_LOG_DIR}:/var/log/nginx/:rw
     restart: always
-  php:
+  php73:
     build: 
       context: .
       args:
