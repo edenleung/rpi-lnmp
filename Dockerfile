@@ -1,3 +1,0 @@
-ARG PHP_VERSION
-FROM php:${PHP_VERSION}-fpm
-RUN apt update
