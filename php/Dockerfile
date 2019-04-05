@@ -1,6 +1,6 @@
 ARG PHP_VERSION
 FROM php:${PHP_VERSION}-fpm
-COPY ../sources.list /etc/apt/sources.list.tmp
+COPY ./sources.list /etc/apt/sources.list.tmp
 RUN mv /etc/apt/sources.list.tmp /etc/apt/sources.list
 RUN apt update
 RUN apt-get install -y \
