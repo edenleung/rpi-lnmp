@@ -28,6 +28,9 @@ services:
       - default
   mysql:
     image: tobi312/rpi-mysql
+    volumes:
+      - ./conf/my.cnf:/etc/mysql/my.cnf
+      - ./data/mysql:/var/lib/mysql
     ports:
       - ${MYSQL_HOST_PORT}:3306
     environment:
