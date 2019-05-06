@@ -16,7 +16,6 @@ services:
       context: ./php
       args:
         PHP_VERSION: ${PHP_VERSION}
-        PHP_SWOOLE: ${PHP_SWOOLE_VERSION}
     volumes:
       - ${SOURCE_DIR}:/var/www/html/:rw
       - ${PHP73_PHP_CONFIG_FILE}:/usr/local/etc/php/php.ini:ro
